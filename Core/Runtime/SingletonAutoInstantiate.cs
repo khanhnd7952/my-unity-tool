@@ -2,7 +2,7 @@
 
 namespace Squirrel
 {
-    public abstract class SingletonAutoInstantiateMonoBehaviour<T> : MonoBehaviour where T : SingletonAutoInstantiateMonoBehaviour<T>
+    public abstract class SingletonAutoInstantiate<T> : MonoBehaviour where T : SingletonAutoInstantiate<T>
     {
         private static T _instance;
 

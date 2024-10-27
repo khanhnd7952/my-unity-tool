@@ -2,7 +2,7 @@
 
 namespace Squirrel
 {
-    public abstract class SingletonMonoBehaviour<T> : MonoBehaviour where T : SingletonMonoBehaviour<T>
+    public abstract class Singleton<T> : MonoBehaviour where T : Singleton<T>
     {
         [SerializeField] bool DontDestroyOnLoad = false;
 

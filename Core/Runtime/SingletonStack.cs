@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Squirrel
 {
-    public abstract class SingletonStackMonoBehaviour<T> : MonoBehaviour where T : SingletonStackMonoBehaviour<T>
+    public abstract class SingletonStack<T> : MonoBehaviour where T : SingletonStack<T>
     {
         static List<T> _stackInstance = new List<T>();
 
