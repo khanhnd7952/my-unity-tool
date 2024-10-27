@@ -1,6 +1,6 @@
 {
-  "displayName": "Kelsey Tool",
-  "name": "com.kelsey.tool",
+  "displayName": "Squirrel",
+  "name": "com.squirrel.mydad",
   "unity": "2022.3",
   "description": "My usefull tool for unity mobile development",
   "category": "Tool",
