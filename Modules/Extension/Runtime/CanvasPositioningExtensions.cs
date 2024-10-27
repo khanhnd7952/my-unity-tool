@@ -70,11 +70,17 @@ namespace Squirrel.Extension
 
             RectTransform canvasRect = canvas.GetComponent<RectTransform>();
             Vector2 viewportSize = new Vector2(
-                0.5f + canvasObject.rect.width / canvasRect.sizeDelta.x,
-                0.5f + canvasObject.rect.height / canvasRect.sizeDelta.y
+                canvasObject.rect.width / canvasRect.sizeDelta.x,
+                canvasObject.rect.height / canvasRect.sizeDelta.y
             );
 
-            Vector3 worldSize = camera.ViewportToWorldPoint(new Vector3(viewportSize.x, viewportSize.y, 0));
+            Vector3 worldSizeMin = camera.ViewportToWorldPoint(new Vector3(0, 0, camera.nearClipPlane));
+            Vector3 worldSizeMax = camera.ViewportToWorldPoint(new Vector3(viewportSize.x, viewportSize.y, camera.nearClipPlane));
+            Vector2 worldSize = new Vector2(
+                Mathf.Abs(worldSizeMax.x - worldSizeMin.x),
+                Mathf.Abs(worldSizeMax.y - worldSizeMin.y)
+            );
+
             return worldSize;
         }
     }
